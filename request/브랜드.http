@@ -1,0 +1,23 @@
+# BrandController 요청
+
+### 브랜드 생성
+POST http://localhost:8080/brand
+Content-Type: application/json
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,zh-CN;q=0.6,zh;q=0.5
+
+{
+  "name": "NewBrand"
+}
+
+### 브랜드 업데이트
+PUT http://localhost:8080/brand/10
+Content-Type: application/json
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,zh-CN;q=0.6,zh;q=0.5
+
+{
+  "name": "UpdatedBrand"
+}
+
+### 브랜드 삭제
+DELETE http://localhost:8080/brand/999
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,zh-CN;q=0.6,zh;q=0.5

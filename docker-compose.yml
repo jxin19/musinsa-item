@@ -1,0 +1,44 @@
+services:
+  musinsa-db:
+    container_name: musinsa-db
+    image: oscarfonts/h2:2.2.224
+    ports:
+      - 8082:81
+      - 1521:1521
+    environment:
+      H2_OPTIONS: -ifNotExists
+    volumes:
+      - ./h2/:/opt/h2-data
+    restart: always
+    networks:
+      - musinsa-network
+
+  musinsa-api:
+    container_name: musinsa-api
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - 8080:8080
+    depends_on:
+      - musinsa-db
+    networks:
+      - musinsa-network
+
+  musinsa-web:
+    container_name: musinsa-web
+    build:
+      dockerfile: Dockerfile
+      context: ./web
+    ports:
+      - 4173:4173
+    command: npm run preview -- --host 0.0.0.0 --port 4173
+    depends_on:
+      - musinsa-db
+      - musinsa-api
+    networks:
+      - musinsa-network
+
+networks:
+  musinsa-network:
+    driver: bridge

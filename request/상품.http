@@ -1,0 +1,39 @@
+# itemController 요청
+
+### 카테고리별 최저가격 브랜드와 상품 가격, 총액 조회
+GET http://localhost:8080/item/lowest-retail-prices-and-brands-of-category
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,zh-CN;q=0.6,zh;q=0.5
+
+### 단일 브랜드로 모든 카테고리 최저가격 조회
+GET http://localhost:8080/item/brand-item-for-lowest-retail-prices
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,zh-CN;q=0.6,zh;q=0.5
+
+### 카테고리별 최저, 최고 가격 브랜드와 상품 가격 조회
+GET http://localhost:8080/item/category/%EC%83%81%EC%9D%98/lowest-highest-retail-price-and-brands
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,zh-CN;q=0.6,zh;q=0.5
+
+### 상품 생성
+POST http://localhost:8080/item
+Content-Type: application/json
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,zh-CN;q=0.6,zh;q=0.5
+
+{
+  "category": "상의",
+  "brand": "UpdatedBrand",
+  "retailPrice": 10000
+}
+
+### 상품 업데이트
+PUT http://localhost:8080/item/73
+Content-Type: application/json
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,zh-CN;q=0.6,zh;q=0.5
+
+{
+  "category": "상의",
+  "brand": "UpdatedBrand",
+  "retailPrice": 15000
+}
+
+### 상품 삭제
+DELETE http://localhost:8080/item/73
+Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,zh-CN;q=0.6,zh;q=0.5
