@@ -13,7 +13,7 @@
 
 ## 2. 기술 스펙
 
-### API
+### API(Backend)
 - 언어: Kotlin 1.9.25
 - 프레임워크: Spring Boot 3.3.5
 - 빌드 도구: Gradle 8.10.2
@@ -42,6 +42,8 @@
 
 
 ## 프로젝트 구조
+
+### API(Backend)
 ```
 src
 ├── main
@@ -94,6 +96,29 @@ src
 │           └── util
 ├── build.gradle.kts
 └── docker-compose.yml
+```
+
+### Frontend
+```
+web/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── interface/
+│   ├── router/
+│   ├── stores/
+│   ├── views/
+│   ├── App.vue
+│   └── main.ts
+├── .env
+├── .env.production
+├── Dockerfile
+├── eslint.config.js
+├── index.html
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
 ```
 
 ## 주요 코드 설명
