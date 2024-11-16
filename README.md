@@ -178,7 +178,8 @@ src
 2. Docker Compose를 사용하여 필요한 서비스를 실행합니다:`docker-compose up -d`
    - H2 Database, API 애플리케이션, Web 애플리케이션을 실행 가능합니다.
    - 실행된 Web 애플리케이션(컨테이너)은 http://localhost:4173 에 접속하여 확인할 수 있습니다. 
-   - 실행된 API 애플리케이션은 http://localhost:8080 입니다.
+   - 실행된 API 애플리케이션(컨테이너)은 http://localhost:8080 입니다.
+   - 다음 3,4번 절차는 Docker를 실행하지 않고 애플리케이션을 실행하는 절차입니다.
 
 
 3. API 애플리케이션을 빌드하고 실행합니다:
